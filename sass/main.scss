@@ -53,15 +53,36 @@ html, body {
             li {
 
                 a {
+                    display: block;
+                    float: left;
                     font-family: 'Montserrat', sans-serif;
                     font-size: 14px;
                     text-transform: uppercase;
                     color: #ffffff;
                     text-decoration: none;
                     transition: 0.5s;
+                    position: relative;
 
                     &:hover {
                         color: #fce38a;
+
+                        &::after {
+                            width: 100%;
+                        }
+                    }
+
+                    &:not(:first-child) {
+                        margin-left: 30px;
+                    }
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        width: 0;
+                        left: 0;
+                        bottom: -10px;
+                        border-bottom: 2px solid #fce38a;
+                        transition: 0.5s;
                     }
                 }
             }

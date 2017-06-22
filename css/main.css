@@ -42,11 +42,26 @@ html, body {
       display: flex;
       justify-content: space-between; }
       .top .navigation .navigation-list li a {
+        display: block;
+        float: left;
         font-family: 'Montserrat', sans-serif;
         font-size: 14px;
         text-transform: uppercase;
         color: #ffffff;
         text-decoration: none;
-        transition: 0.5s; }
+        transition: 0.5s;
+        position: relative; }
         .top .navigation .navigation-list li a:hover {
           color: #fce38a; }
+          .top .navigation .navigation-list li a:hover::after {
+            width: 100%; }
+        .top .navigation .navigation-list li a:not(:first-child) {
+          margin-left: 30px; }
+        .top .navigation .navigation-list li a::after {
+          content: "";
+          position: absolute;
+          width: 0;
+          left: 0;
+          bottom: -10px;
+          border-bottom: 2px solid #fce38a;
+          transition: 0.5s; }
